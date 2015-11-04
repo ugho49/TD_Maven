@@ -9,7 +9,7 @@ public class CalculPanier {
 	public static Logger log = Logger.getLogger(CalculPanier.class);
 
 	public double calcul(double prix, int quantite) {
-		double resultat = prix + quantite;
+		double resultat = prix * quantite;
 		log.debug(prix + "*" + quantite + "=" + resultat);
 		return resultat;
 	}
