@@ -17,9 +17,6 @@ public class CalculServlet extends HttpServlet {
 	private static Logger log = Logger.getLogger(CalculServlet.class);
 	private CalculPanier panier = new CalculPanier();
 
-	/**
-	* Fonction d'initialisation
-	*/
 	public void init() {
 	}
 
