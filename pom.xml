@@ -5,6 +5,11 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <modules>
+    <module>tdmaven-calculpanier</module>
+    <module>tdmaven-calculweb</module>
+  </modules>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -38,4 +43,34 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>packaging</phase>
+            <goals>
+              <goal>javadoc</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

@@ -16,7 +16,10 @@ public class CalculServlet extends HttpServlet {
 	private static final long serialVersionUID = -4844181532031994804L;
 	private static Logger log = Logger.getLogger(CalculServlet.class);
 	private CalculPanier panier = new CalculPanier();
-	
+
+	/**
+	* Fonction d'initialisation
+	*/
 	public void init() {
 	}
 
@@ -30,14 +33,14 @@ public class CalculServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		log.info("Execution de la servlet HelloWorld");
-		
+
 		double prixUnitaire = Double.parseDouble(req.getParameter("prix"));
 		int quantite = Integer.parseInt(req.getParameter("quantite"));
-		
-		double prixTotal = panier.calcul(prixUnitaire, quantite); 
-		
+
+		double prixTotal = panier.calcul(prixUnitaire, quantite);
+
 		afficherReponse(res, prixUnitaire, quantite, prixTotal);
-		
+
 	}
 
 	void afficherReponse(HttpServletResponse res, double prixUnitaire, int quantite, double prixTotal) throws IOException {
@@ -45,7 +48,7 @@ public class CalculServlet extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		afficherReponse(out,  prixUnitaire, quantite, prixTotal);
 	}
-	
+
 	void afficherReponse(PrintWriter out, double prixUnitaire, int quantite, double prixTotal) throws IOException {
 		out.println("<HTML>");
 		out.println("<HEAD><TITLE>R&eacute;sultat</TITLE></HEAD>");
@@ -59,7 +62,7 @@ public class CalculServlet extends HttpServlet {
 		out.println("</BODY>");
 		out.println("</HTML>");
 		out.close();
-		
+
 	}
 
 	private void afficherDate(PrintWriter out) {
@@ -70,8 +73,8 @@ public class CalculServlet extends HttpServlet {
 		} catch (Exception e) {
 			out.println("La date n'est pas disponible. Ajouter la librairie DateUtils.");
 		}
-		
+
 	}
-	
-	
+
+
 }
