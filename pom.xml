@@ -10,6 +10,34 @@
     <module>tdmaven-calculweb</module>
   </modules>
 
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>javadoc</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -52,7 +80,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <executions>
           <execution>
-            <phase>packaging</phase>
+            <phase>site</phase>
             <goals>
               <goal>javadoc</goal>
             </goals>
