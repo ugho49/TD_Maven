@@ -16,10 +16,18 @@
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
+      <build>
+        <filters>
+        	<filter>src/main/filters/config-dev.properties</filter>
+        </filters>
+      </build>
     </profile>
     <profile>
       <id>prod</id>
       <build>
+        <filters>
+        	<filter>src/main/filters/config-prod.properties</filter>
+        </filters>
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -74,6 +82,12 @@
 
 
   <build>
+    <resources>
+    	<resource>
+    		<directory>src/main/resources</directory>
+    		<filtering>true</filtering>
+    	</resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
