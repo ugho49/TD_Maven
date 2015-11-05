@@ -10,7 +10,7 @@
 
   <groupId>edu.univ.nantes</groupId>
   <artifactId>tdmaven-calculweb</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>${project.parent.version}</version>
   <packaging>jar</packaging>
 
   <name>tdmaven-calculweb</name>
@@ -20,6 +20,21 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>edu.univ.nantes</groupId>
+      <artifactId>tdmaven-calculpanier</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>edu.univ.nantes</groupId>
+      <artifactId>dateUtils</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -28,22 +43,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>edu.univ.nantes</groupId>
-      <artifactId>tdmaven-calculpanier</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>edu.univ.nantes</groupId>
-      <artifactId>dateUtils</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.1.0</version>
-    </dependency>
-  </dependencies>
 </project>
