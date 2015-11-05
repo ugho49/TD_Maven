@@ -8,7 +8,7 @@
 
 	<servlet>
 		<servlet-name>Calculer</servlet-name>
-		<servlet-class>fr.iut.mag.CalculServlet</servlet-class>
+		<servlet-class>edu.univ.nantes.tdMaven.CalculServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Calculer</servlet-name>
